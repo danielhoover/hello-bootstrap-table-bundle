@@ -30,6 +30,9 @@ $(function () {
         const buttons = [];
 
         for (let i = 0; i < value.length; i++) {
+            console.log(value);
+            console.log('TADAAAAAA!!!');
+            
             if(value[i].faIcon) {
                 buttons.push(
                     `<a href="${value[i].route}" class="${value[i].classNames}"><i class="fa ${value[i].faIcon}"></i>${value[i].displayName}</a>`
