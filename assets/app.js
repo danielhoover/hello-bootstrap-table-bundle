@@ -30,9 +30,16 @@ $(function () {
         const buttons = [];
 
         for (let i = 0; i < value.length; i++) {
-            buttons.push(
-                `<a href="${value[i].route}" class="${value[i].classNames}">${value[i].displayName}</a>`
-            );
+            if(value[i].faIcon) {
+                buttons.push(
+                    `<a href="${value[i].route}" class="${value[i].classNames}"><i class="fa ${value[i].faIcon}"></i>${value[i].displayName}</a>`
+                );
+            } else {
+                buttons.push(
+                    `<a href="${value[i].route}" class="${value[i].classNames}">${value[i].displayName}</a>`
+                );
+            }
+
         }
 
        return buttons.join("");

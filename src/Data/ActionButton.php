@@ -43,7 +43,8 @@ class ActionButton
             'classNames' => '',
             'additionalClassNames' => '',
             'routeName' => null,
-            'routeParams' => array('id')
+            'routeParams' => array('id'),
+            'faIcon' => null
         ));
 
         $resolver->setRequired('displayName');
@@ -54,6 +55,7 @@ class ActionButton
         $resolver->setAllowedTypes('classNames', 'string');
         $resolver->setAllowedTypes('additionalClassNames', 'string');
         $resolver->setAllowedTypes('routeParams', 'array');
+        $resolver->setAllowedTypes('faIcon', ['string', 'null']);
     }
 
     public function getClassNames()
@@ -76,6 +78,11 @@ class ActionButton
     public function getRouteName()
     {
         return $this->options['routeName'];
+    }
+
+    public function getFaIcon()
+    {
+        return $this->options['faIcon'];
     }
 
     public function getRouteParams()
